@@ -1,0 +1,149 @@
+interface BuildCommand {
+  command: string;
+  output?: string;
+}
+
+interface EnvVariables {
+  [key: string]: string | undefined;
+}
+
+interface HeaderRule {
+  source: string;
+  headers: Array<{ key: string; value: string }>;
+}
+
+interface CacheStrategy {
+  rules: Array<{
+    urlPathPattern: string;
+    edgeCacheDisabled?: boolean;
+    browserCacheTtl?: number;
+    edgeCacheTtl?: number;
+  }>;
+}
+
+interface FrameworkSettings {
+  vercel?: Record<string, any>;
+  netlify?: Record<string, any>;
+}
+
+interface DeployConfig {
+  build: BuildCommand;
+  env: EnvVariables;
+  headers: Array<HeaderRule>;
+  cache: CacheStrategy;
+  framework: FrameworkSettings;
+}
+
+export const deployConfig: DeployConfig = {
+  build: {
+    command: "next build",
+    output: ".next"
+  },
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    DATABASE_URL: process.env.DATABASE_URL
+  },
+  headers: [
+    {
+      source: "/api/:path*",
+      headers: [
+        { key: "Access-Control-Allow-Credentials", value: "true" },
+        { key: "Access-Control-Allow-Origin", value: "*" },
+        { key: "Vary", value: "Origin" }
+      ]
+    }
+  ],
+  cache: {
+    rules: [
+      {
+        urlPathPattern: "/_next/static/*",
+        browserCacheTtl: 31536000,
+        edgeCacheTtl: 604800
+      },
+      {
+        urlPathPattern: "/*.css",
+        browserCacheTtl: 31536000,
+        edgeCacheTtl: 604800
+      }
+    ]
+  },
+  framework: {
+    vercel: {},
+    netlify: {}
+  }
+};
+
+interface BuildCommand {
+  command: string;
+  output?: string;
+}
+
+interface EnvVariables {
+  [key: string]: string | undefined;
+}
+
+interface HeaderRule {
+  source: string;
+  headers: Array<{ key: string; value: string }>;
+}
+
+interface CacheStrategy {
+  rules: Array<{
+    urlPathPattern: string;
+    edgeCacheDisabled?: boolean;
+    browserCacheTtl?: number;
+    edgeCacheTtl?: number;
+  }>;
+}
+
+interface FrameworkSettings {
+  vercel?: Record<string, any>;
+  netlify?: Record<string, any>;
+}
+
+interface DeployConfig {
+  build: BuildCommand;
+  env: EnvVariables;
+  headers: Array<HeaderRule>;
+  cache: CacheStrategy;
+  framework: FrameworkSettings;
+}
+
+export const deployConfig: DeployConfig = {
+  build: {
+    command: "next build",
+    output: ".next"
+  },
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    DATABASE_URL: process.env.DATABASE_URL
+  },
+  headers: [
+    {
+      source: "/api/:path*",
+      headers: [
+        { key: "Access-Control-Allow-Credentials", value: "true" },
+        { key: "Access-Control-Allow-Origin", value: "*" },
+        { key: "Vary", value: "Origin" }
+      ]
+    }
+  ],
+  cache: {
+    rules: [
+      {
+        urlPathPattern: "/_next/static/*",
+        browserCacheTtl: 31536000,
+        edgeCacheTtl: 604800
+      },
+      {
+        urlPathPattern: "/*.css",
+        browserCacheTtl: 31536000,
+        edgeCacheTtl: 604800
+      }
+    ]
+  },
+  framework: {
+    vercel: {},
+    netlify: {}
+  }
+};

@@ -1,0 +1,37 @@
+{
+  "name": "GreenWorkHub",
+  "type": "saas",
+  "description": "GreenWorkHub is a SaaS platform that helps small businesses track and reduce their carbon footprint through sustainable office practices and remote work solutions. It combines personal finance management with climate tech to provide a holistic approach to sustainability.",
+  "generated_at": "2025-12-06T22:22:19.012688",
+  "components": [
+    "spec",
+    "build",
+    "deploy",
+    "spec_requirements",
+    "spec_architecture",
+    "build_code",
+    "build_test"
+  ],
+  "files_written": [
+    "businesses\\production_test\\saas\\greenworkhub\\src\\components\\component.tsx",
+    "businesses\\production_test\\saas\\greenworkhub\\__tests__\\component.test.tsx",
+    "businesses\\production_test\\saas\\greenworkhub\\vercel.json",
+    "businesses\\production_test\\saas\\greenworkhub\\src\\components\\requirements.tsx",
+    "businesses\\production_test\\saas\\greenworkhub\\__tests__\\architecture.test.tsx",
+    "businesses\\production_test\\saas\\greenworkhub\\vercel.json",
+    "businesses\\production_test\\saas\\greenworkhub\\src\\components\\test.tsx",
+    "businesses\\production_test\\saas\\greenworkhub\\src\\app\\layout.tsx",
+    "businesses\\production_test\\saas\\greenworkhub\\src\\app\\globals.css",
+    "businesses\\production_test\\saas\\greenworkhub\\src\\app\\page.tsx"
+  ],
+  "tasks_completed": 7,
+  "tasks_failed": 0,
+  "ap2_estimated_cost": 45.2,
+  "ap2_estimated_tokens": 19500,
+  "ap2_generation_approval": null,
+  "infrastructure_approvals": {
+    "analytics": null,
+    "database": null,
+    "storage": null
+  }
+}
